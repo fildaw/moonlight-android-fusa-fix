@@ -1,5 +1,6 @@
 # The fix
-Fixed compatibility with FuSa Gamepad (PSP program for emulating USB gamepad). Version 9.9.1 of moonlight android app.
+Fixed compatibility with FuSa Gamepad (PSP program for emulating USB gamepad). 
+Version 9.9.1 of moonlight android app. Compiling instructions below apply.
 
 # Moonlight Android
 
