@@ -890,6 +890,30 @@ public class ControllerHandler implements InputManager.InputDeviceListener, UsbD
             }
         }
 
+        // Fix for FuSaGamepad (PSP Gamepad)
+        if (context.vendorId == 0x00ff && context.productId == 0x01cb) {
+            switch (event.getKeyCode()) {
+                case 188:
+                    return KeyEvent.KEYCODE_BUTTON_A;
+                case 189:
+                    return KeyEvent.KEYCODE_BUTTON_B;
+                case 190:
+                    return KeyEvent.KEYCODE_BUTTON_X;
+                case 191:
+                    return KeyEvent.KEYCODE_BUTTON_Y;
+                case 192:
+                    return KeyEvent.KEYCODE_BUTTON_L1;
+                case 193:
+                    return KeyEvent.KEYCODE_BUTTON_R1;
+                case 194:
+                    return KeyEvent.KEYCODE_BUTTON_SELECT;
+                case 195:
+                    return KeyEvent.KEYCODE_BUTTON_START;
+                case 196:
+                    return KeyEvent.KEYCODE_BUTTON_L2;
+            }
+        }
+
         // Override mode button for 8BitDo controllers
         if (context.vendorId == 0x2dc8 && event.getScanCode() == 306) {
             return KeyEvent.KEYCODE_BUTTON_MODE;
